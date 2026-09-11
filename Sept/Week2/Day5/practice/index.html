@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flavoriz - Adventure of Delicacies</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Poppins', sans-serif; }
+</style>
+</head>
+<body class="bg-white text-slate-800">
+
+  <!-- NAVBAR -->
+  <header class="max-w-7xl mx-auto flex items-center justify-between px-6 py-6">
+    <div class="text-2xl font-extrabold">
+      FLA<span class="text-orange-500">VORIZ</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+      <a href="#" class="text-slate-900 font-semibold border-b-2 border-slate-900 pb-1">Home</a>
+      <a href="#" class="hover:text-orange-500">About</a>
+      <a href="#" class="hover:text-orange-500">Recipes</a>
+      <a href="#" class="hover:text-orange-500">Blog</a>
+      <a href="#" class="hover:text-orange-500">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <div class="hidden sm:flex items-center bg-slate-100 rounded-full px-4 py-2 w-56">
+        <input type="text" placeholder="Search..." class="bg-transparent outline-none text-sm w-full placeholder:text-slate-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      </div>
+      <button class="h-9 w-9 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold">A</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center pt-6 pb-16">
+    <div>
+      <h1 class="text-5xl sm:text-6xl font-extrabold leading-[1.05] text-slate-900">
+        Adventure<br>
+        of <span class="text-orange-500">Delicacies</span>
+      </h1>
+      <p class="mt-6 text-slate-500 max-w-md leading-relaxed">
+        Unlock a world of variety culinary recipes and unleash your inner chef the easy way with Flavoriz.
+      </p>
+      <div class="mt-8 flex items-center gap-4">
+        <button class="bg-slate-900 text-white rounded-full pl-6 pr-2 py-2 flex items-center gap-3 text-sm font-medium hover:bg-slate-800 transition">
+          Explore Recipes
+          <span class="h-7 w-7 rounded-full bg-orange-500 flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </span>
+        </button>
+        <button class="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-orange-500">
+          Get Our Mobile App
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="rounded-[2.5rem] bg-slate-900 aspect-[4/3] overflow-hidden relative shadow-xl">
+        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=800&q=80" alt="Seasoned chicken in cast iron skillet with herbs" class="w-full h-full object-cover">
+      </div>
+      <div class="absolute -top-6 left-10 h-2 w-2 rounded-full bg-slate-800"></div>
+      <div class="absolute top-4 left-24 h-3 w-3 rounded-full bg-orange-400"></div>
+      <div class="absolute -top-2 right-1/3 h-2 w-2 rounded-full bg-slate-800"></div>
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP -->
+  <section class="max-w-7xl mx-auto px-6 grid sm:grid-cols-3 lg:grid-cols-4 gap-10 pb-20 border-b border-slate-100">
+    <div>
+      <div class="h-10 w-10 rounded-full border border-slate-300 flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+        </svg>
+      </div>
+      <h3 class="font-semibold text-slate-900 mb-2">User-Centered</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Your feedback shapes our platform, ensuring a seamless and satisfying culinary journey.</p>
+    </div>
+    <div>
+      <div class="h-10 w-10 rounded-full border border-slate-300 flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        </svg>
+      </div>
+      <h3 class="font-semibold text-slate-900 mb-2">Diverse Recipes</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">We celebrate diverse culinary traditions from around the world, inspiring you today.</p>
+    </div>
+    <div>
+      <div class="h-10 w-10 rounded-full border border-slate-300 flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+        </svg>
+      </div>
+      <h3 class="font-semibold text-slate-900 mb-2">Fun Community</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">We foster a vibrant foodie community where joy comes with sharing recipes with us.</p>
+    </div>
+
+    <div class="flex items-center gap-4 sm:col-span-3 lg:col-span-1 bg-slate-50 rounded-2xl p-4">
+      <div class="h-16 w-16 rounded-xl overflow-hidden shrink-0">
+        <img src="https://images.unsplash.com/photo-1544025162
