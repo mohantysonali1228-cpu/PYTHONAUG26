@@ -3,14 +3,13 @@ document.getElementById("studentForm").onsubmit = function(event) {
     event.preventDefault();
 
     
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var course = document.getElementById("course").value;
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirmPassword").value;
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let course = document.getElementById("course").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
 
-    var gender = document.querySelector(
+   let gender = document.querySelector(
         'input[name="gender"]:checked'
     );
 
@@ -55,7 +54,7 @@ document.getElementById("studentForm").onsubmit = function(event) {
         return;
     }
 
-    var student = {
+    let student = {
         name: name,
         email: email,
         phone: phone,
@@ -65,7 +64,7 @@ document.getElementById("studentForm").onsubmit = function(event) {
     };
 
     
-    var students = JSON.parse(localStorage.getItem("students"));
+    let  students = JSON.parse(localStorage.getItem("students"));
 
     if (students == null) {
         students = [];
