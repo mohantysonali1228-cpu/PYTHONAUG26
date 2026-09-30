@@ -1,64 +1,84 @@
-let registerForm = document.getElementById("registerForm");
+document.getElementById("studentForm").onsubmit = function(event) {
 
-registerForm.addEventListener("submit", function (e) {
+    event.preventDefault();
 
-    e.preventDefault();
+    
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let course = document.getElementById("course").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
 
-    let name = document.getElementById("name").value.trim();
-    let age = document.getElementById("age").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let password = document.getElementById("password").value;
+   let gender = document.querySelector(
+        'input[name="gender"]:checked'
+    );
 
-    let message = document.getElementById("message");
-
-    // Validation
-
-    if (!name || !age || !phone || !email || !password) {
-
-        message.textContent = "Please fill all the fields.";
-
+    if (name == "") {
+        alert("Please enter your name");
         return;
     }
 
-    if (phone.length !== 10) {
-
-        message.textContent =
-            "Phone number must contain 10 digits.";
-
+    if (email == "") {
+        alert("Please enter your email");
         return;
     }
 
-    if (password.length < 6) {
-
-        message.textContent =
-            "Password must contain at least 6 characters.";
-
+    if (phone == "") {
+        alert("Please enter your phone number");
         return;
     }
 
-    // Create user object
+    if (gender == null) {
+        alert("Please select your gender");
+        return;
+    }
 
-    let user = {
+    if (course == "") {
+        alert("Please select a course");
+        return;
+    }
+
+    if (password == "") {
+        alert("Please enter your password");
+        return;
+    }
+
+    
+    if (confirmPassword == "") {
+        alert("Please confirm your password");
+        return;
+    }
+
+    if (password != confirmPassword) {
+        alert("Passwords do not match");
+        return;
+    }
+
+    let student = {
         name: name,
-        age: age,
-        phone: phone,
         email: email,
+        phone: phone,
+        gender: gender.value,
+        course: course,
         password: password
     };
 
-    // Store data
+    
+    let  students = JSON.parse(localStorage.getItem("students"));
 
-    localStorage.setItem(
-        "registeredUser",
-        JSON.stringify(user)
-    );
+    if (students == null) {
+        students = [];
+    }
 
-    message.textContent =
-        "Registration successful!";
+    students.push(student);
 
-    // Clear form
+    localStorage.setItem("students", JSON.stringify(students));
 
-    registerForm.reset();
+    document.getElementById("message").innerHTML =
+        "Registration Successful!";
 
-});
+    document.getElementById("studentForm").reset();
+
+
+    
+};

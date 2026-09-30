@@ -1,63 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+        }
+
+        .form-box {
+            width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .gender {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+            color: green;
+        }
+    </style>
 </head>
 
 <body>
+    <script src="script.js"></script>
 
-    <h1>Student Registration</h1>
+    <div class="form-box">
 
-    <form id="registerForm">
+        <h2>Student Registration</h2>
 
-        <input
-            type="text"
-            id="name"
-            placeholder="Enter your name"
-        >
-        <br><br>
+        <form id="studentForm">
 
-        <input
-            type="number"
-            id="age"
-            placeholder="Enter your age"
-        >
-        <br><br>
+            <label>Name:</label>
+            <input type="text" id="name">
 
-        <input
-            type="tel"
-            id="phone"
-            placeholder="Enter your phone"
-        >
-        <br><br>
+            <label>Email:</label>
+            <input type="text" id="email">
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-        >
-        <br><br>
+            <label>Phone:</label>
+            <input type="text" id="phone">
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-        >
-        <br><br>
+            <label>Gender:</label>
 
-        <button type="submit">
-            Register
-        </button>
+            <input type="radio" class="gender" name="gender" value="Male">
+            Male
 
-    </form>
+            <input type="radio" class="gender" name="gender" value="Female">
+            Female
 
-    <p id="message"></p>
+            <input type="radio" class="gender" name="gender" value="Other">
+            Other
+
+            <label>Course:</label>
+
+            <select id="course">
+                <option value="">Select Course</option>
+                <option value="BCA">BCA</option>
+                <option value="BBA">BBA</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="MCA">MCA</option>
+                <option value="MBA">MBA</option>
+            </select>
+
+            <label>Password:</label>
+            <input type="password" id="password">
+
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmPassword">
+
+            <button type="submit">Register</button>
+
+            <p id="message"></p>
+
+        </form>
+
+    </div>
 
     <script src="script.js"></script>
 
 </body>
-
 </html>
