@@ -80,17 +80,6 @@ function App() {
         </button>
       </form>
 
-      {userData && (
-        <div className="mt-6 border p-5 rounded-xl shadow">
-          <h2 className="text-xl font-bold text-green-600 mb-3">
-            Registration Successful!
-          </h2>
-
-          <p><strong>Name:</strong> {userData.name}</p>
-          <p><strong>Age:</strong> {userData.age}</p>
-          <p><strong>Email:</strong> {userData.email}</p>
-        </div>
-      )}
     </div>
   );
 }
