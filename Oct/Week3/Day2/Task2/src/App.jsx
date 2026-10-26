@@ -48,11 +48,7 @@ function App() {
   };
 
 
-  const editPost = (post) => {
-    setEditId(post.id);
-    setTitle(post.title);
-    setBody(post.body);
-  };
+
 
   const updatePost = async (e) => {
     e.preventDefault();
@@ -94,11 +90,6 @@ function App() {
   };
 
 
-  const cancelEdit = () => {
-    setEditId(null);
-    setTitle("");
-    setBody("");
-  };
 
   return (
     <div style={{ maxWidth: "800px", margin: "30px auto" }}>
@@ -151,9 +142,7 @@ function App() {
           <h3>{post.title}</h3>
           <p>{post.body}</p>
 
-          <button onClick={() => editPost(post)}>
-            Edit
-          </button>
+       
 
           <button onClick={() => deletePost(post.id)}>
             Delete
