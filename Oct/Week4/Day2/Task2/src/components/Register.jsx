@@ -1,85 +1,78 @@
-
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const API = "http://localhost:5000/users";
+function Register({ onUserAdded }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    username: "",
+  });
 
-function Register({ editUser, fetchUsers, cancelEdit }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-
-  useEffect(() => {
-    setName(editUser?.name || "");
-    setEmail(editUser?.email || "");
-  }, [editUser]);
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const user = { name, email };
+      const response = await axios.post(
+        "https://jsonplaceholder.typicode.com/users",
+        formData
+      );
 
-      if (editUser) {
-        await axios.put(`${API}/${editUser.id}`, user);
-        toast.success("User updated successfully!");
-      } else {
-        await axios.post(API, user);
-        toast.success("User registered successfully!");
-      }
+      onUserAdded(response.data);
 
-      setName("");
-      setEmail("");
-      cancelEdit();
-      fetchUsers();
+      toast.success("User registered successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        username: "",
+      });
     } catch (error) {
-      console.error(error);
-      toast.error("Unable to save user. Check the server.");
+      console.error("Registration failed:", error);
+      toast.error("Registration failed!");
     }
   };
 
   return (
-    <div>
-      <h2>{editUser ? "Update User" : "Register User"}</h2>
+    <div className="form-container">
+      <h2>Register User</h2>
 
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          name="name"
           placeholder="Enter Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={formData.name}
+          onChange={handleChange}
           required
         />
-
-        <br /><br />
 
         <input
           type="email"
+          name="email"
           placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={formData.email}
+          onChange={handleChange}
           required
         />
 
-        <br /><br />
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter Username"
+          value={formData.username}
+          onChange={handleChange}
+          required
+        />
 
-        <button type="submit">
-          {editUser ? "Update" : "Register"}
-        </button>
-
-        {editUser && (
-          <button
-            type="button"
-            onClick={() => {
-              setName("");
-              setEmail("");
-              cancelEdit();
-              toast.info("Edit cancelled");
-            }}
-          >
-            Cancel
-          </button>
-        )}
+        <button type="submit">Register</button>
       </form>
     </div>
   );
