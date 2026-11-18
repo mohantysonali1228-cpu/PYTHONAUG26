@@ -1,0 +1,6 @@
+Student Name: sonali
+Roll Number: 20
+Marks: [79, 89, 78, 78, 78]
+Total Marks: 402
+Percentage: 80.4%
+Result: Pass

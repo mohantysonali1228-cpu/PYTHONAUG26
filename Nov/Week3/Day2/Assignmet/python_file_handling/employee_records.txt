@@ -1,0 +1,15 @@
+Employee ID: 101
+Name: sonali
+Department: mca
+Salary: 40000
+-------------------
+Employee ID: 102
+Name: rama
+Department: IT
+Salary: 5000
+-------------------
+Employee ID: 103
+Name: subha
+Department: MCA
+Salary: 3000
+-------------------
