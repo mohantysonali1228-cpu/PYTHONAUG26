@@ -1,7 +1,9 @@
-# import my_package
-# import add_package
-# res = add_package.add(5,8)
-# print(res)
+import my_package
+import add_package
+res = add_package.add(5,8)
+print(res)
+
+
 
 import calculation_package
 add= calculation_package.add(5,7)
